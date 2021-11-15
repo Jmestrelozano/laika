@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import {
   SafeAreaView,
@@ -21,8 +21,13 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import Bienvenida from './src/screen/Bienvenida.js';
 import LaikaHome from './src/screen/Home/LaikaHome.js';
+
+import SplashScreen from 'react-native-splash-screen';
 const Stack = createStackNavigator();
 const LaikaApp = () => {
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
   return (
     <>
       <StatusBar />

@@ -4,7 +4,6 @@ import { stylesGeneral } from '../../../styles/stylesGeneral';
 import { responsiveScreenHeight, responsiveScreenWidth } from 'react-native-responsive-dimensions';
 
 const CardExperiencies = ({ item }) => {
-  console.log(item);
   const { comment, desc, image } = item;
   return (
     <View style={{ backgroundColor: '#653f90', padding: 15, marginBottom: 8, borderRadius: 15 }}>
