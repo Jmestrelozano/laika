@@ -46,11 +46,7 @@ export const benefitsStyles = StyleSheet.create({
     borderColor: '#ffd600',
     marginVertical: 30,
   },
-  titleButtonMembresy: {
-    color: 'black',
-    fontWeight: 'bold',
-    fontSize: 17,
-  },
+
   termsText: {
     textAlign: 'center',
     fontWeight: 'bold',
@@ -63,5 +59,16 @@ export const benefitsStyles = StyleSheet.create({
   },
   rotateImage: {
     transform: [{ rotate: '180deg' }],
+  },
+
+  buttonMembresy: {
+    borderRadius: 10,
+    width: '100%',
+    height: responsiveScreenHeight(6),
+    marginTop: 25,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+    color: 'black',
   },
 });

@@ -7,12 +7,11 @@ import logo2 from '../../assets/toys_2.png';
 import logo3 from '../../assets/toys_3.png';
 import logo4 from '../../assets/toys_4.png';
 import logo5 from '../../assets/toys_5.png';
-import { responsiveScreenHeight, responsiveScreenWidth } from 'react-native-responsive-dimensions';
 
 const Bienvenida = ({ navigation }) => {
   return (
     <View style={[bienvenidaStyles.body, stylesGeneral.backgroundColorBody]}>
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={stylesGeneral.alineacion}>
         <Text style={bienvenidaStyles.text}>
           Laika <Text style={stylesGeneral.colorSunshineGold}>Member</Text>
         </Text>
@@ -32,7 +31,7 @@ const Bienvenida = ({ navigation }) => {
           onPress={() => navigation.navigate('Home')}
           style={[stylesGeneral.backgroundColorSunshineGold, bienvenidaStyles.buttonContinue]}
         >
-          <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 17 }}>Continuar</Text>
+          <Text style={bienvenidaStyles.titleButton}>Continuar</Text>
         </TouchableOpacity>
       </View>
     </View>

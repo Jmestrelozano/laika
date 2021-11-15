@@ -40,4 +40,10 @@ export const bienvenidaStyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
+  titleButton: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 17,
+  },
 });

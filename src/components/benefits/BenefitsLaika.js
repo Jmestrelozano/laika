@@ -85,13 +85,9 @@ const BenefitsLaika = () => {
         </View>
       </View>
       <TouchableOpacity
-        style={[
-          stylesGeneral.backgroundColorSunshineGold,
-          stylesGeneral.buttonContinue,
-          { justifyContent: 'center' },
-        ]}
+        style={[benefitsStyles.buttonMembresy, stylesGeneral.backgroundColorSunshineGold]}
       >
-        <Text style={benefitsStyles.titleButtonMembresy}>Adquirir Membresia</Text>
+        <Text style={stylesGeneral.titleButton}>Adquirir Membresia</Text>
       </TouchableOpacity>
 
       <Text style={[stylesGeneral.colorSunshineGold, benefitsStyles.termsText]}>
