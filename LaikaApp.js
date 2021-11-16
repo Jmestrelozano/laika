@@ -17,6 +17,10 @@ const Stack = createStackNavigator();
 const LaikaApp = () => {
   useEffect(() => {
     SplashScreen.hide();
+    console.log(window.navigator.onLine);
+    if (window.navigator.onLine === false) {
+      alert('Verifica tu conexion a internet');
+    }
   }, []);
 
   return (

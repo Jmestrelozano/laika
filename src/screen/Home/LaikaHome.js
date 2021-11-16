@@ -9,22 +9,27 @@ import BenefitsLaika from '../../components/benefits/BenefitsLaika';
 import MembershipLaika from '../../components/membership/MembershipLaika';
 import ExperienciesLaika from '../../components/experiencies/ExperienciesLaika';
 import { getExperiencies } from '../../api/getExperiencies';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { types } from '../../types/types';
 import { ScrollView } from 'react-native-gesture-handler';
+import { ContentModal } from '../../components/modal/ContentModal';
 
 const LaikaHome = ({ navigation }) => {
   const dispatch = useDispatch();
+  const { stateModalPayment } = useSelector((state) => state.todoAppReducer);
+
   const mostrarExp = async () => {
     dispatch({ type: types.dataExperiencies, payload: await getExperiencies() });
   };
 
   useEffect(() => {
     mostrarExp();
-  }, []);
-  console.log(window.navigator.onLine);
+    console.log(stateModalPayment);
+  }, [stateModalPayment]);
+
   return (
     <>
+      <ContentModal showModal={stateModalPayment} />
       <ScrollView>
         <View style={[stylesGeneral.backgroundColorBody, laikahomeStyles.body]}>
           <Pressable onPress={() => navigation.goBack()}>
