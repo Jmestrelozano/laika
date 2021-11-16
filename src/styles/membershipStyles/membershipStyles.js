@@ -3,7 +3,6 @@ import {
   responsiveScreenFontSize,
   responsiveScreenHeight,
   responsiveScreenWidth,
-  responsiveWidth,
 } from 'react-native-responsive-dimensions';
 
 export const membershipStyle = StyleSheet.create({
@@ -41,6 +40,10 @@ export const membershipStyle = StyleSheet.create({
     width: '98%',
     borderRadius: 10,
     marginTop: 25,
+    textAlign: 'center',
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 25,
   },
 
   textAhorro: {

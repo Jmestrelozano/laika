@@ -1,4 +1,4 @@
-import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import React, { useEffect } from 'react';
 import { stylesGeneral } from '../../styles/stylesGeneral';
 import { laikahomeStyles } from '../../styles/laikahomeStyles';
@@ -11,6 +11,7 @@ import ExperienciesLaika from '../../components/experiencies/ExperienciesLaika';
 import { getExperiencies } from '../../api/getExperiencies';
 import { useDispatch } from 'react-redux';
 import { types } from '../../types/types';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const LaikaHome = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -21,30 +22,32 @@ const LaikaHome = ({ navigation }) => {
   useEffect(() => {
     mostrarExp();
   }, []);
-
+  console.log(window.navigator.onLine);
   return (
-    <ScrollView>
-      <View style={[stylesGeneral.backgroundColorBody, laikahomeStyles.body]}>
-        <Pressable onPress={() => navigation.goBack()}>
-          <Image style={laikahomeStyles.rotateImage} source={arrowLeft} />
-        </Pressable>
+    <>
+      <ScrollView>
+        <View style={[stylesGeneral.backgroundColorBody, laikahomeStyles.body]}>
+          <Pressable onPress={() => navigation.goBack()}>
+            <Image style={laikahomeStyles.rotateImage} source={arrowLeft} />
+          </Pressable>
 
-        <View style={stylesGeneral.centrado}>
-          <Text style={bienvenidaStyles.text}>
-            Laika <Text style={stylesGeneral.colorSunshineGold}>Member</Text>
-          </Text>
-          <Text style={bienvenidaStyles.parrafo}>
-            Conviértete en miembro, recibe beneficios exclusivos y dale lo mejor a tu mascota
-          </Text>
+          <View style={stylesGeneral.centrado}>
+            <Text style={bienvenidaStyles.text}>
+              Laika <Text style={stylesGeneral.colorSunshineGold}>Member</Text>
+            </Text>
+            <Text style={bienvenidaStyles.parrafo}>
+              Conviértete en miembro, recibe beneficios exclusivos y dale lo mejor a tu mascota
+            </Text>
 
-          <Image style={laikahomeStyles.imageMember} source={cardMember} />
+            <Image style={laikahomeStyles.imageMember} source={cardMember} />
 
-          <BenefitsLaika />
-          <MembershipLaika />
-          <ExperienciesLaika />
+            <BenefitsLaika />
+            <MembershipLaika />
+            <ExperienciesLaika />
+          </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </>
   );
 };
 

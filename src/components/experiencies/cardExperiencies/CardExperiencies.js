@@ -1,39 +1,23 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
 import React from 'react';
 import { stylesGeneral } from '../../../styles/stylesGeneral';
-import { responsiveScreenHeight, responsiveScreenWidth } from 'react-native-responsive-dimensions';
+import { cardexperienciesStyles } from '../../../styles/experienciesStyles/cardexperienciesStyles';
 
 const CardExperiencies = ({ item }) => {
   const { comment, desc, image } = item;
   return (
-    <View style={{ backgroundColor: '#653f90', padding: 15, marginBottom: 8, borderRadius: 15 }}>
+    <View style={cardexperienciesStyles.containerCard}>
       <View style={[stylesGeneral.row]}>
-        <Image
-          style={{
-            borderRadius: 10,
-            resizeMode: 'contain',
-            width: responsiveScreenWidth(28),
-            height: responsiveScreenHeight(17),
-          }}
-          source={{ uri: image }}
-        />
+        <Image style={cardexperienciesStyles.column1} source={{ uri: image }} />
 
-        <View
-          style={{
-            display: 'flex',
-            justifyContent: 'flex-start',
-            paddingHorizontal: 10,
-            width: responsiveScreenWidth(45),
-            height: '100%',
-          }}
-        >
-          <Text numberOfLines={3} style={[stylesGeneral.colorWhite, { fontWeight: 'bold' }]}>
+        <View style={cardexperienciesStyles.column2}>
+          <Text numberOfLines={3} style={[stylesGeneral.colorWhite, stylesGeneral.bold]}>
             {desc}
           </Text>
 
           <Text
             numberOfLines={5}
-            style={[stylesGeneral.colorWhite, { fontWeight: '300', fontSize: 14 }]}
+            style={[stylesGeneral.colorWhite, cardexperienciesStyles.textDesc]}
           >
             {comment}
           </Text>

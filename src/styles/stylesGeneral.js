@@ -38,4 +38,7 @@ export const stylesGeneral = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 17,
   },
+  bold: {
+    fontWeight: 'bold',
+  },
 });

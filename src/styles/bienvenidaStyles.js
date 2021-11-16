@@ -14,6 +14,7 @@ export const bienvenidaStyles = StyleSheet.create({
     fontSize: 40,
     fontWeight: 'bold',
     color: 'white',
+    fontFamily: 'Causten Round Extra Bold Oblique',
   },
 
   parrafo: {
